@@ -21,23 +21,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tip Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jop-d7-kjh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jop-d7-kjh">
                                 <rect key="frame" x="91" y="28" width="193" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="Ev4-Uj-I7i"/>
+                                    <constraint firstAttribute="height" constant="55" id="GBy-pE-TRB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter price here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WZ8-eH-ANv">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter price here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WZ8-eH-ANv">
                                 <rect key="frame" x="122" y="318" width="130" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="EsV-9k-S4q"/>
+                                    <constraint firstAttribute="height" constant="30" id="Pn4-f2-q78"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="computeTip:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="tWg-qn-JN4"/>
+                                </connections>
                             </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Dv-Th-4vG">
+                                <rect key="frame" x="100" y="356" width="174" height="97"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="bmA-5x-tZh"/>
+                                    <constraint firstAttribute="width" constant="174" id="lCh-fX-yTy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WZ8-eH-ANv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="20J-9k-SVN"/>
+                            <constraint firstItem="WZ8-eH-ANv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="32x-e9-QUY"/>
+                            <constraint firstItem="5Dv-Th-4vG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bzt-4S-ufG"/>
+                            <constraint firstItem="Jop-d7-kjh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="fCU-qi-nZn"/>
+                            <constraint firstItem="Jop-d7-kjh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="imh-Of-dLM"/>
+                            <constraint firstItem="5Dv-Th-4vG" firstAttribute="top" secondItem="WZ8-eH-ANv" secondAttribute="bottom" constant="8" id="mQ2-E7-oi1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="priceTextField" destination="WZ8-eH-ANv" id="ehs-V0-n2v"/>
+                        <outlet property="tipLabel" destination="5Dv-Th-4vG" id="5rW-9A-wE0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
